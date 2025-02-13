@@ -1,20 +1,20 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
+/*===== MENU SHOW =====*/
+const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+        nav = document.getElementById(navId)
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
             nav.classList.toggle('show')
         })
     }
 }
-showMenu('nav-toggle','nav-menu')
+showMenu('nav-toggle', 'nav-menu')
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
 
-function linkAction(){
+function linkAction() {
     const navMenu = document.getElementById('nav-menu')
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show')
@@ -24,20 +24,20 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
-const scrollActive = () =>{
+const scrollActive = () => {
     const scrollDown = window.scrollY
 
-  sections.forEach(current =>{
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-        
-        if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+        if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
             sectionsClass.classList.add('active-link')
-        }else{
+        } else {
             sectionsClass.classList.remove('active-link')
-        }                                                    
+        }
     })
 }
 window.addEventListener('scroll', scrollActive)
@@ -48,51 +48,16 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-//     reset: true
+    //     reset: true
 });
 
-/*===== RESUME SECTION ANIMATION =====*/
-document.addEventListener("DOMContentLoaded", function () {
-    ScrollReveal().reveal('.resume__container', {
-        origin: 'bottom',
-        distance: '60px',
-        duration: 1000,
-        delay: 200,
-        easing: 'ease-in-out',
-        reset: true
-    });
-});
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
+sr.reveal('.home__social-icon', { interval: 200 });
+sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
+sr.reveal('.project__link, .project__img, .resume__container, .resume__description', { interval: 200 });
 
-/*===== CONTACT FORM ANIMATION =====*/
-document.addEventListener("DOMContentLoaded", function () {
-    ScrollReveal().reveal('.contact__container', {
-        origin: 'bottom',
-        distance: '60px',
-        duration: 1000,
-        delay: 200,
-        easing: 'ease-in-out',
-        reset: true
-    });
-
-    const contactForm = document.querySelector(".contact__form");
-    contactForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevents form from refreshing page
-
-        // Simple form validation
-        const name = contactForm.querySelector("input[name='name']").value.trim();
-        const email = contactForm.querySelector("input[name='email']").value.trim();
-        const message = contactForm.querySelector("textarea[name='message']").value.trim();
-
-        if (!name || !email || !message) {
-            alert("Please fill in all fields before submitting.");
-            return;
-        }
-
-        alert("Message sent successfully!");
-        contactForm.submit(); // Submit the form after validation
-    });
-});
-
+/* JavaScript to trigger animation when section enters viewport */
 document.addEventListener("DOMContentLoaded", function () {
     const skillBars = document.querySelectorAll(".skills__bar span");
     const skillsSection = document.getElementById("skills");
@@ -110,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleScroll() {
         if (isElementInViewport(skillsSection)) {
             skillBars.forEach(bar => {
-                bar.style.width = bar.getAttribute("data-width");
+                bar.style.width = bar.parentElement.parentElement.getAttribute("data-width");
             });
             window.removeEventListener("scroll", handleScroll);
         }
@@ -118,12 +83,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", handleScroll);
 });
-
-
-
-
-
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
