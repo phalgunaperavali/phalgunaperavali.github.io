@@ -1,14 +1,22 @@
-# Portfolio Responsive Complete
-## [Watch it on youtube](https://youtu.be/AKNvTxWOdKw)
-### Portfolio Responsive Complete
 
-- Responsive Personal Portfolio Website HTML CSS & JavaScript.
-- Contains animations when scrolling.
-- Smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
+# [Your Name] Portfolio Website
 
-![preview img](/preview.png)
+Welcome to the repository for my personal portfolio website. This site showcases my skills, projects, and professional experiences as a [Your Profession, e.g., Software Engineer, Web Developer, etc.]. Additionally, it includes detailed sections about my education, certifications, and interests.
 
+## Features
+
+- **Home**: Introduction to my professional persona and quick links.
+- **About Me**: Background information, professional summary, and key skills.
+- **Skills**: Interactive display of technical and soft skills using charts.
+- **Experience**: Detailed timeline of professional experiences with modal popups for more information.
+- **Education**: Overview of academic qualifications and certifications.
+- **Projects**: Gallery of personal and professional projects with links to GitHub repos, live demos, or blogs.
+- **Achievements**: Display of significant achievements and awards.
+- **Hobbies**: Insight into personal interests and extracurricular activities.
+- **Blog**: Links to recent blog posts or publications.
+- **Contact**: Form for reaching out along with social links and professional profiles.
+
+## Technologies Used
+
+- **HTML/CSS/JS**: Core technologies for web development.
