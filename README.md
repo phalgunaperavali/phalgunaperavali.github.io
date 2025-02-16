@@ -1,6 +1,6 @@
 
 
-# [Your Name] Portfolio Website
+# Phalguna Peravali Portfolio Website
 
 Welcome to the repository for my personal portfolio website. This site showcases my skills, projects, and professional experiences as a [Your Profession, e.g., Software Engineer, Web Developer, etc.]. Additionally, it includes detailed sections about my education, certifications, and interests.
 
